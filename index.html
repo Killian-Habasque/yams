@@ -8,17 +8,24 @@
 </head>
 
 <body>
+	<!-- <button onclick="import('./script/main.js').then(module => module.begin())">LOAD</button> -->
 	<main class="game__main">
 		<div class="loading__container bg__patern">
-			<label class="txt__label">Loading...</label>
-			<div class="progress-bar">
-				<span></span>
+			<div class="begin">
+				<label class="txt__label">Loading...</label>
+				<div class="progress-bar">
+					<span></span>
+				</div>
+			</div>
+			<div class="final">
+				<label class="txt__label">Score : <span></span></label>
+				<a class="btn__secondary" href="/">Recommencer</a>
 			</div>
 		</div>
 		<header>
 			<div class="header-right">
 				<nav class="header-nav">
-					<button id="btn-audio" class="btn-audio active">
+					<button id="btn-audio" class="btn-audio">
 						<div class="wave">
 							<span class="stroke"></span>
 							<span class="stroke"></span>
@@ -113,36 +120,36 @@
 					</tr>
 					<tr class="row">
 						<td class="cell">
-							<img class="icon" src="assets/images/icons/chance.svg" alt="">
+							<img class="icon" src="assets/images/icons/sm-straight.svg" alt="">
 							Petite suite
 						</td>
 						<td data-key="7" id="choice__score" class="cell txt__number">-</td>
 					</tr>
 					<tr class="row">
 						<td class="cell">
-							<img class="icon" src="assets/images/icons/chance.svg" alt="">
+							<img class="icon" src="assets/images/icons/lg-straight.svg" alt="">
 							Grande suite
 						</td>
 						<td data-key="8" id="choice__score" class="cell txt__number">-</td>
 					</tr>
 					<tr class="row">
 						<td class="cell">
-							<img class="icon" src="assets/images/icons/chance.svg" alt="">
+							<img class="icon" src="assets/images/icons/full.svg" alt="">
 							Full
 						</td>
 						<td data-key="9" id="choice__score" class="cell txt__number">-</td>
 					</tr>
 					<tr class="row">
 						<td class="cell">
-							<img class="icon" src="assets/images/icons/chance.svg" alt="">
+							<img class="icon" src="assets/images/icons/four-kind.svg" alt="">
 							Carré
 						</td>
 						<td data-key="10" id="choice__score" class="cell txt__number">-</td>
 					</tr>
 					<tr class="row">
 						<td class="cell">
-							<img class="icon" src="assets/images/icons/chance.svg" alt="">
-							Yam's
+							<img class="icon" src="assets/images/icons/yatzee.svg" alt="">
+							Yatzee
 						</td>
 						<td data-key="11" id="choice__score" class="cell txt__number">-</td>
 					</tr>
@@ -159,8 +166,11 @@
 
 		</div>
 		<section class="ui-labels">
-			<div class="score txt__label">Score: <span id="score-result"></span></div>
-			<div class="attempts txt__label">Attemps: <span id="nb-attempts"></span></div>
+			<div class="attempts txt__group">
+				<span class="txt__label">Encore: </span>
+				<span id="nb-attempts" class="txt__label"></span><img class="icon" src="assets/images/icons/three.svg"
+					alt="">
+			</div>
 		</section>
 
 		<section class="ui-controls">
@@ -196,8 +206,8 @@
 			}
 		  }
 		</script>
-	<script type="module" src="./script/main.js"></script>
-	<script type="text/javascript" src="./script/pages/header.js"></script>
+	<script type="module" src="./scripts/main.js"></script>
+	<script type="module" src="./scripts/pages/header.js"></script>
 </body>
 
 </html>

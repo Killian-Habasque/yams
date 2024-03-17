@@ -1,4 +1,4 @@
-.homepage {
+
     .content {
         position: relative;
         display: flex;
@@ -21,7 +21,7 @@
             align-items: center;
         }
 
-        .ui-controls {
+        .ui-controls__menu {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -70,5 +70,4 @@
 
     }
 
-}
 

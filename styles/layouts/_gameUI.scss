@@ -6,22 +6,20 @@
     display: grid;
 
     .sheet__score {
-        z-index: 50;
         margin-left: $spacer-md;
     }
     .ui-controls {
-        z-index: 50;
         position: absolute;
         align-self: end;
         justify-self: center;
         margin-bottom: $spacer-xl;
     }
     .ui-labels {
-        z-index: 50;
+        z-index: 1;
         position: absolute;
-        align-self: start;
-        justify-self: center;
-        margin-top: $spacer-xl;
+        align-self: center;
+        justify-self: end;
+        margin-right: $spacer-md;
     }
 }
 
@@ -29,20 +27,26 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
+    z-index: 7;
     background: $color-primary;
-    gap: $spacer-sm;
     top: 0;
 
-    .txt__label {
-        font-family: $font-number--label;
-        font-size: 20px;
+    // .txt__label {
+    //     font-family: $font-number--label;
+    //     font-size: 20px;
+    // }
+    .begin, .final {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $spacer-sm;
     }
-    
+    .final, .begin {
+        display: none;
+    } 
     .progress-bar {
         width: 30%;
         height: 4%;

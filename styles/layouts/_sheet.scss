@@ -1,5 +1,5 @@
 .sheet__score {
-    z-index: 10;
+    z-index: 5;
     $sheet-radius: 15px;
     $sheet-radius--in: calc($sheet-radius - $spacer-xs);
     $border-style: 2px solid $color-primary;
@@ -75,7 +75,7 @@
                 }
 
                 .icon {
-                    width: 20px;
+                    width: 25px;
                     height: 20px;
                 }
             }

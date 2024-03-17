@@ -11,7 +11,7 @@
     color: $color-primary;
     cursor: pointer;
     box-shadow: 0px 10px 10px 0px rgba(71, 71, 71, 0.1);
-    z-index: 10;
+    z-index: 5;
 
     /* Primary */
 
@@ -342,24 +342,22 @@
 	}
 	&.active {
 		.stroke:nth-child(1) {
-			animation: pulse 2.5s linear alternate infinite;
-			animation-delay: 0.9s;
-		}
-		.stroke:nth-child(2) {
-			animation: pulse 3s linear alternate infinite;
+			animation: pulse 1.5s linear alternate infinite;
 			animation-delay: 0.3s;
 		}
+		.stroke:nth-child(2) {
+			animation: pulse 2s linear alternate infinite;
+		}
 		.stroke:nth-child(3) {
+			animation: pulse 1s linear alternate infinite;
+			animation-delay: 0.3s;
+		}
+		.stroke:nth-child(4) {
 			animation: pulse 2s linear alternate infinite;
 			animation-delay: 0.6s;
 		}
-		.stroke:nth-child(4) {
-			animation: pulse 2.5s linear alternate infinite;
-			animation-delay: 0.9s;
-		}
 		.stroke:nth-child(5) {
-			animation: pulse 3s linear alternate infinite;
-			animation-delay: 0.3s;
+			animation: pulse 1.5s linear alternate infinite;
 		}
 	}
 }

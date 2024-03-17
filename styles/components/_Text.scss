@@ -14,14 +14,15 @@
 
     @else if $type =="alert" {
         font-family: $font-text--label;
-        font-size: 40px;
+        font-size: 60px;
         position: absolute;
         align-self: center;
         justify-self: center;
         min-width: 100px;
         font-weight: 600;
         color: $color-light;
-        text-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.5);
+        text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
+        margin-bottom: 35vh;
     }
 
     @else if $type =="cta" {
@@ -64,5 +65,25 @@
 
     &__alert {
         @include text-style("alert");
+    }
+}
+
+
+
+.txt__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacer-xs;
+    color: $color-white !important;
+    background: #00000078;
+    padding: $spacer-sm $spacer-md;
+    border-radius: $spacer-md;
+
+    .txt__label {
+        font-size: 14px!important;
+    }
+    .icon {
+        width: 15px;
     }
 }

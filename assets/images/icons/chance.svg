@@ -1,12 +1,12 @@
-<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="19.1611" width="7.83871" height="7.83871" rx="0.870968" fill="white"/>
-<rect x="19.1611" width="7.83871" height="7.83871" rx="0.870968" fill="#A13320"/>
-<rect x="19.1611" y="19.1614" width="7.83871" height="7.83871" rx="0.870968" fill="white"/>
-<rect x="19.1611" y="19.1614" width="7.83871" height="7.83871" rx="0.870968" fill="#A13320"/>
-<rect y="19.1614" width="7.83871" height="7.83871" rx="0.870968" fill="white"/>
-<rect y="19.1614" width="7.83871" height="7.83871" rx="0.870968" fill="#A13320"/>
-<rect width="7.86874" height="8.14977" rx="0.870968" fill="white"/>
-<rect width="7.86874" height="8.14977" rx="0.870968" fill="#A13320"/>
-<rect x="9.58057" y="9.58057" width="7.56841" height="7.83871" rx="0.870968" fill="white"/>
-<rect x="9.58057" y="9.58057" width="7.56841" height="7.83871" rx="0.870968" fill="#A13320"/>
+<svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="21" width="7.875" height="7.87842" rx="0.870968" fill="white"/>
+<rect x="5" y="21" width="7.875" height="7.87842" rx="0.870968" fill="#A13320"/>
+<rect x="14" y="12" width="7.875" height="7.87842" rx="0.870968" fill="white"/>
+<rect x="14" y="12" width="7.875" height="7.87842" rx="0.870968" fill="#A13320"/>
+<rect x="23" y="3" width="7.875" height="7.87842" rx="0.870968" fill="white"/>
+<rect x="23" y="3" width="7.875" height="7.87842" rx="0.870968" fill="#A13320"/>
+<rect x="5" y="3" width="7.875" height="7.87842" rx="0.870968" fill="white"/>
+<rect x="5" y="3" width="7.875" height="7.87842" rx="0.870968" fill="#A13320"/>
+<path d="M23 21.871C23 21.3899 23.3899 21 23.871 21H30.004C30.4851 21 30.875 21.3899 30.875 21.871V28.0075C30.875 28.4885 30.4851 28.8784 30.004 28.8784H23.871C23.3899 28.8784 23 28.4885 23 28.0075V21.871Z" fill="white"/>
+<path d="M23 21.871C23 21.3899 23.3899 21 23.871 21H30.004C30.4851 21 30.875 21.3899 30.875 21.871V28.0075C30.875 28.4885 30.4851 28.8784 30.004 28.8784H23.871C23.3899 28.8784 23 28.4885 23 28.0075V21.871Z" fill="#A13320"/>
 </svg>
