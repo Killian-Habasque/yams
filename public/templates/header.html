@@ -1,0 +1,110 @@
+<header class="header">
+    <div class="header-right">
+        <nav class="header-nav">
+            <button id="btn-audio" class="btn-audio">
+                <div class="wave">
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                </div>
+            </button>
+            <!-- <button id="btn-score" class="btn-score"> -->
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-trophy">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg> -->
+            <!-- </button> -->
+            <button id="btn-user" class="btn-user">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z" />
+                </svg>
+            </button>
+            <a class="btn__secondary" href="#">Règlages</a>
+            <button id="menu" class="btn__light" href="">Menu</button>
+        </nav>
+
+        <div class="header-menu">
+            <nav class="menu--item header-menu__links">
+                <a href="/" class="txt__title">Home</a>
+                <a href="https://killian-habasque.fr/" target="_blank" class="txt__title">About us</a>
+            </nav>
+            <div class="menu--item header-menu__rules">
+                <h2 class="txt__title">Règles</h2>
+                <div id="data-rule">
+                </div>
+            </div>
+            <div class="menu--item header-menu__blog">
+                <!-- <a href="" class="txt__title">Blog</a> -->
+                <!-- <button id="retryButton" class="btn__secondary">Recommencer</button> -->
+                <button id="quitButton" class="btn__secondary">Quitter</button>
+            </div>
+        </div>
+
+        <div class="header-user">
+
+            <div class="menu--item header--userForm">
+                <nav class="form-bar">
+                    <button class="txt__title active">Se connecter</button>
+                    <button class="txt__title">S'inscrire</button>
+                </nav>
+                <div class="form-switch">
+                    <div class="form-item login active">
+                        <h2 class="txt__title">Se connecter</h2>
+                        <form id="login-form">
+                            <input type="text" id="login-text" class="field__primary" placeholder="Pseudo">
+                            <input type="password" id="login-password" class="field__primary"
+                                placeholder="Mot de passe">
+                            <button type="submit" class="btn__secondary">Envoyer</button>
+                        </form>
+                        <div class="form-message">
+
+                        </div>
+                    </div>
+                    <div class="form-item register">
+                        <h2 class="txt__title">S'inscrire</h2>
+                        <form id="register-form">
+                            <input type="text" id="text" class="field__primary" placeholder="Pseudo" required>
+                            <input type="password" id="password" class="field__primary" placeholder="Mot de passe"
+                                required>
+                            <input type="password" id="verif-password" class="field__primary"
+                                placeholder="Confirmation du mot de passe" required>
+                            <button type="submit" class="btn__secondary">Envoyer</button>
+                        </form>
+                        <div class="form-message">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu--item header--userProfile">
+                <h2 class="txt__title">Profil</h2>
+                <div class="profil-data">
+                    <ul id="data-user"></ul>
+                    <button id="logout" class="btn__secondary">Se déconnecter</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="header-score">
+            <table class="menu--item">
+                <thead>
+                    <tr>
+                        <td class="txt__label">Classement</td>
+                        <td class="txt__label">Score</td>
+                    </tr>
+                </thead>
+                <tbody id="data-score">
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+</header>

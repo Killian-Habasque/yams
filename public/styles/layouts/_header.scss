@@ -1,0 +1,287 @@
+#header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: $spacer-md;
+    z-index: 20;
+}
+
+header {
+
+    #btn-audio,
+    #quitButton,
+    #retryButton,
+    &.in-game #btn-score {
+        display: none;
+    }
+
+    #btn-score,
+    &.in-game #btn-audio,
+    &.in-game #quitButton,
+    &.in-game #retryButton {
+        display: flex;
+    }
+
+    #btn-user {
+        display: flex;
+    }
+
+    .header-right {
+        position: relative;
+
+        .header-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-menu,
+        .header-score,
+        .header-user {
+            margin-top: $spacer-md;
+            position: absolute;
+            height: calc(100vh - 50px - 2*$spacer-md - $spacer-md);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: $spacer-md;
+            opacity: 0;
+            display: none;
+
+            .menu--item {
+                border-radius: $spacer-sm;
+                padding: $spacer-lg $spacer-md;
+                display: flex;
+                flex-direction: column;
+                gap: $spacer-lg;
+                box-shadow: 0px 10px 10px 0px rgba(71, 71, 71, 0.1);
+                width: 100%;
+            }
+
+            .header-menu__links {
+                background: $color-secondary;
+            }
+
+            .header-menu__rules {
+                height: 100%;
+                background: $color-light;
+                max-height: 450px;
+
+                .txt__title {
+                    color: $color-dark;
+                }
+            }
+
+            .header-menu__blog {
+                background: $color-primary--light;
+                // border-bottom:  4px solid $color-secondary;
+            }
+        }
+
+
+
+
+        .header-user {
+
+            .menu--item {
+                display: none;
+
+                &.active {
+                    display: flex;
+                }
+            }
+
+            .header--userForm {
+                background: $color-light;
+
+                .form-bar {
+                    display: flex;
+                    padding: 0 20px;
+
+                    button {
+                        font-family: "Mali-Regular";
+                        font-size: 15px;
+                        color: $color-primary;
+                        width: 100%;
+                        border-bottom: 2px solid $color-primary;
+                        padding: 10px 0;
+                        font-weight: 600;
+
+                        &.active,
+                        &:hover {
+                            color: $color-secondary;
+                            border-bottom: 2px solid $color-secondary;
+                        }
+                    }
+                }
+
+                .form-switch {
+                    h2 {
+                        font-weight: 600;
+                        color: $color-primary;
+                        text-align: center;
+                    }
+
+                    .form-item,
+                    form {
+                        display: flex;
+                        padding: 20px;
+                        gap: 20px;
+                        flex-direction: column;
+                    }
+
+                    .form-item {
+                        display: none;
+
+                        &.active {
+                            display: flex;
+                        }
+                    }
+
+                    .form-message {
+                        display: flex;
+                        justify-content: center;
+                        min-height: 24px;
+                    }
+
+                    .txt__label {
+                        color: $color-primary;
+                        text-align: center;
+                        min-height: 15px;
+                    }
+                }
+
+            }
+
+            .header--userProfile {
+                background: $color-light;
+                padding: 40px;
+
+                .profil-data {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    padding: 20px;
+                    padding-top: 0;
+                }
+
+                .txt__title {
+                    font-weight: 800;
+                    color: $color-primary;
+                }
+
+                .txt__label {
+                    color: $color-dark;
+                }
+
+                .txt__number {
+                    font-weight: 800;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+            }
+        }
+
+        .header-menu__rules {
+
+            #data-rule {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .rule-item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $spacer-md;
+                    padding: 0 $spacer-md;
+
+                    .txt__number {
+                        color: $color-primary;
+                        font-size: 26px;
+                        text-align: center;
+                    }
+
+                    .txt__label {
+                        color: $color-dark;
+                    }
+
+                    .examples {
+                        padding: $spacer-lg $spacer-md;
+                        background: $color-secondary;
+                        border-radius: $spacer-md;
+                        display: flex;
+                        justify-content: center;
+                        gap: $spacer-sm;
+                        border: 2px solid $color-primary;
+                    }
+                }
+
+                .arrow-item {
+                    display: flex;
+                    justify-content: end;
+
+                    button {
+                        display: flex;
+                        width: 35px;
+                        svg {
+                            path {
+                                fill: $color-dark;
+  
+                            }
+                            &:hover {
+                                opacity: 0.75;
+                            }
+                        }
+                    }
+                    button:disabled,
+                    button[disabled]{
+                      svg {
+                        opacity: 0.5;
+                      }
+                    }
+                    button#before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-indicator {
+    display: flex;
+    color: $color-dark;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        fill: $color-dark;
+        width: 24px;
+        height: 24px;
+        animation: 0.5s linear infinite rotate;
+    }
+}
+
+@media #{$md} {
+    #header {
+        display: none;
+    }
+}

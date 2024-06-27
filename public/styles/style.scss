@@ -1,0 +1,33 @@
+@import "variables";
+
+@import "necessary/reset";
+@import "necessary/fonts";
+@import "necessary/breakpoints";
+
+@import "components/Text";
+@import "components/Button";
+@import "components/Field";
+
+@import "layouts/background";
+@import "layouts/header";
+@import "layouts/sheet";
+@import "layouts/gameUI";
+
+@import "pages/home";
+
+body {
+    background: $color-primary;
+    overflow: hidden;
+	height: 100vh;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.selected {
+	opacity: 0.5;
+}

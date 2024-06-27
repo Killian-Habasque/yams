@@ -1,0 +1,89 @@
+@mixin text-style($type) {
+    @if $type =="label" {
+        font-family: $font-text--label;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        color: $color-light;
+    }
+
+    @else if $type =="number" {
+        font-family: $font-number--label;
+        font-size: 20px;
+    }
+
+    @else if $type =="alert" {
+        font-family: $font-text--label;
+        font-size: 60px;
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+        min-width: 100px;
+        font-weight: 600;
+        color: $color-light;
+        text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
+        margin-bottom: 35vh;
+    }
+
+    @else if $type =="cta" {
+        font-family: $font-text--label;
+        font-size: 15px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    @else if $type =="title" {
+        font-family: $font-text--label;
+        font-size: 18px;
+        letter-spacing: 0.05em;
+        font-weight: 400;
+        color: $color-light;
+        text-transform: uppercase;
+    }
+}
+
+/*
+ * Classes defintion
+ */
+.txt {
+    &__title {
+        @include text-style("title");
+    }
+
+    &__label {
+        @include text-style("label");
+    }
+
+    &__cta {
+        @include text-style("cta");
+    }
+
+    &__number {
+        @include text-style("number");
+    }
+
+    &__alert {
+        @include text-style("alert");
+    }
+}
+
+
+
+.txt__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacer-xs;
+    color: $color-white !important;
+    background: #00000078;
+    padding: $spacer-sm $spacer-md;
+    border-radius: $spacer-md;
+
+    .txt__label {
+        font-size: 14px!important;
+    }
+    .icon {
+        width: 15px;
+    }
+}

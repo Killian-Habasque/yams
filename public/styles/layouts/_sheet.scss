@@ -1,0 +1,142 @@
+.sheet__score {
+    z-index: 5;
+    $sheet-radius: 15px;
+    $sheet-radius--in: calc($sheet-radius - $spacer-xs);
+    $border-style: 2px solid $color-primary;
+
+    font-family: $font-text--label;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: $color-primary;
+    border: $border-style;
+    background: $color-light;
+    border-radius: $sheet-radius;
+    width: 300px;
+    height: fit-content;
+    padding: $spacer-xs;
+    align-self: center;
+
+    .sheet__table {
+        display: grid;
+        border-radius: $sheet-radius;
+
+        thead,
+        tbody,
+        tfoot {
+            display: flex;
+            flex-direction: column;
+            border: $border-style;
+            border-bottom: none;
+        }
+
+        thead {
+            border-radius: $sheet-radius--in $sheet-radius--in 0 0;
+            overflow: hidden;
+        }
+
+        tfoot {
+            border-radius: 0 0 $sheet-radius--in $sheet-radius--in;
+            border-bottom: 2px solid $color-primary;
+            overflow: hidden;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 10fr 4fr;
+
+            &:not(:last-child) {
+                border-bottom: $border-style;
+            }
+
+            .cell {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 1vh;
+                width: 100%;
+
+                &:first-child {
+                    border-right: $border-style;
+                }
+
+                &:last-child {
+                    justify-content: center;
+                }
+
+                &.double {
+                    padding: 0;
+                    flex-direction: column;
+                    padding-top: 10px;
+                    text-align: center;
+                }
+
+                &.large {
+                    padding: 2vh 1vh;
+                }
+
+                .icon {
+                    width: 25px;
+                    height: 20px;
+                }
+            }
+        }
+
+
+    }
+}
+
+#choice__score.unselected {
+    cursor: pointer;
+    position: relative;
+
+    &:after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        background:
+            linear-gradient(to right, $color-secondary--light 8px, transparent 8px) 0 0,
+            linear-gradient(to right, $color-secondary--light 8px, transparent 8px) 0 100%,
+            linear-gradient(to left, $color-secondary--light 8px, transparent 8px) 100% 0,
+            linear-gradient(to left, $color-secondary--light 8px, transparent 8px) 100% 100%,
+            linear-gradient(to bottom, $color-secondary--light 8px, transparent 8px) 0 0,
+            linear-gradient(to bottom, $color-secondary--light 8px, transparent 8px) 100% 0,
+            linear-gradient(to top, $color-secondary--light 8px, transparent 8px) 0 100%,
+            linear-gradient(to top, $color-secondary--light 8px, transparent 8px) 100% 100%;
+
+        background-repeat: no-repeat;
+        background-size: 26px 14px;
+        animation: 0.4s ease-in infinite reverse scale;
+    }
+    @keyframes scale {
+        from {
+          transform: scale(1);
+        }
+        to {
+         transform: scale(1.05);
+        }
+      }
+    &:hover {
+        &:after {
+            display: block;
+        }
+    }
+}
+
+.bg__primary {
+    background: $color-primary;
+    color: $color-light;
+}
+
+.bg__secondary {
+    background: $color-secondary;
+    color: $color-light;
+}
+
+.border__dotted {
+    border-style: dotted !important;
+}

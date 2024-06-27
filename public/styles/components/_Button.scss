@@ -1,0 +1,391 @@
+@mixin button-style($type) {
+    position: relative;
+    border-radius: $g-radius;
+    min-width: 100px;
+    @include text-style("cta");
+    background: #9d301d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacer-md $spacer-lg;
+    color: $color-primary;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px 0px rgba(71, 71, 71, 0.1);
+    z-index: 5;
+
+    /* Primary */
+
+    @if $type =="primary" {
+        background: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background: $color-primary--light;
+            color: $color-white;
+        }
+    }
+
+    /* Secondary */
+
+    @else if $type =="secondary" {
+        background: $color-secondary;
+        color: $color-light;
+
+        &:hover {
+            background: $color-secondary--light;
+            color: $color-light;
+        }
+    }
+
+    /* Dark */
+
+    @else if $type =="dark" {
+        background: $color-dark;
+        color: $color-light;
+
+        &:hover {
+            background: $color-primary--light;
+            color: $color-light;
+        }
+    }
+
+    /* Dark */
+
+    @else if $type =="light" {
+        background: $color-light;
+        color: $color-dark;
+
+        &:hover {
+            background: $color-primary--light;
+            color: $color-light;
+        }
+    }
+}
+
+/*
+ * Classes defintion
+ */
+.btn {
+    &__primary {
+        @include button-style("primary");
+    }
+
+    &__secondary {
+        @include button-style("secondary");
+    }
+
+    &__light {
+        @include button-style("light");
+    }
+
+    &__dark {
+        @include button-style("dark");
+    }
+}
+
+
+
+
+
+@mixin button-throw-style($type) {
+
+    @include button-style($type);
+    padding-right: calc(20px*2 + $spacer-md);
+    background: none;
+    box-shadow: inherit;
+    animation: 1s cubic-bezier(1, 1, 0.4, 2) 0.5s forwards app-btn-all;
+    opacity: 0;
+
+    @if $type =="primary" {
+        color: $color-white;
+        &:hover {
+            &:after {
+                background: $color-primary;
+                border: 2px solid $color-white;
+            }
+        }
+    }
+
+    @else if $type =="secondary" {
+        color: $color-primary;
+        animation-delay: 1s;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: $g-radius;
+        z-index: -1;
+    }
+
+    &:after {
+        left: 0;
+
+        @if $type =="primary" {
+            background: $color-primary;
+            border: 2px solid $color-white;
+        }
+
+        @else if $type =="secondary" {
+            background: $color-secondary--light;
+            border: 2px solid $color-primary--light;
+        }
+    }
+
+    &:before {
+        background: $color-secondary;
+        border: 2px solid $color-secondary;
+        left: 0;
+        top: 7px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        animation: 1s cubic-bezier(1, 1, 0.4, 2) 0.5s forwards app-btn-top;
+  
+        @if $type =="secondary" {
+            animation-delay: 1s;
+        }
+
+
+    }
+
+    &:active {
+        transform: translate(0, 7px) !important;
+
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            transform: translate(0, -7px);
+        }
+    }
+
+    &.disabled {
+        display: none;
+    }
+
+    svg {
+        position: absolute;
+        right: 25px;
+    }
+
+    @include svg-dice-style();
+    @include svg-book-style();
+
+    @keyframes app-btn-top {
+        0% {
+            opacity: 0;
+            top: 0;
+        }
+
+        50% {
+            opacity: 1;
+            top: 0;
+        }
+
+        100% {
+            opacity: 1;
+            top: 7px;
+        }
+    }
+
+    @keyframes app-btn-all {
+        0% {
+            opacity: 0;
+            transform: translate(0, 7px);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translate(0, 7px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: initial;
+        }
+    }
+}
+
+/*
+ * Custom
+ */
+@mixin svg-dice-style() {
+    svg.dice {
+        width: 20px;
+        height: 20px;
+
+        path {
+            fill: $color-white;
+            stroke: $color-primary;
+        }
+
+        &:first-child {
+            transform: translate(5px, 5px) rotate(25deg);
+        }
+
+        &:last-child {
+            transform: translate(-5px, -5px);
+        }
+    }
+
+    &:hover {
+        svg.dice {
+
+            &:first-child {
+                animation: 0.5s linear infinite shake;
+            }
+
+            &:last-child {
+                animation: 0.5s linear infinite shake2;
+            }
+
+            @keyframes shake {
+                0% {
+                    transform: translate(7px, 7px) rotate(25deg);
+                }
+
+                25% {
+                    transform: translate(7px, 7px) rotate(10deg);
+                }
+
+                50% {
+                    transform: translate(7px, 7px) rotate(25deg);
+                }
+
+                75% {
+                    transform: translate(7px, 7px) rotate(10deg);
+                }
+
+                100% {
+                    transform: translate(7px, 7px) rotate(25deg);
+                }
+            }
+
+            @keyframes shake2 {
+                0% {
+                    transform: translate(-7px, -7px) rotate(0deg);
+                }
+
+                25% {
+                    transform: translate(-7px, -7px) rotate(-15deg);
+                }
+
+                50% {
+                    transform: translate(-7px, -7px) rotate(0deg);
+                }
+
+                75% {
+                    transform: translate(-7px, -7px) rotate(-15deg);
+                }
+
+                100% {
+                    transform: translate(-7px, -7px) rotate(0deg);
+                }
+            }
+        }
+    }
+}
+
+@mixin svg-book-style() {
+    svg.book {
+        width: 25px;
+        height: 25px;
+
+        path {
+            fill: $color-primary;
+            stroke: $color-secondary--light;
+        }
+    }
+}
+
+/*
+ * Classes defintion
+ */
+.btn-throw {
+    &__primary {
+        @include button-throw-style("primary");
+    }
+
+    &__secondary {
+        @include button-throw-style("secondary");
+    }
+}
+
+
+.btn-audio, .btn-score, .btn-user {
+    display: none;
+	height: 50px;
+	width: 50px;
+	padding: 4px;
+	border: 4px solid $color-white;
+	border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        stroke: $color-white;
+    }
+	.wave {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		.stroke {
+			display: block;
+			position: relative;
+			background: $color-white;
+			height: 10%;
+			width: 10%;
+			border-radius: 50px;
+		}
+	}
+	&.active {
+		.stroke:nth-child(1) {
+			animation: pulse 1.5s linear alternate infinite;
+			animation-delay: 0.3s;
+		}
+		.stroke:nth-child(2) {
+			animation: pulse 2s linear alternate infinite;
+		}
+		.stroke:nth-child(3) {
+			animation: pulse 1s linear alternate infinite;
+			animation-delay: 0.3s;
+		}
+		.stroke:nth-child(4) {
+			animation: pulse 2s linear alternate infinite;
+			animation-delay: 0.6s;
+		}
+		.stroke:nth-child(5) {
+			animation: pulse 1.5s linear alternate infinite;
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		height: 10%;
+	}
+	
+	100% {
+		height: 60%;
+	}
+}
+
+
+.btn-user {
+    display: flex;
+    background: $color-white;
+
+    svg {
+        width: 24px;
+        fill: $color-dark;
+        stroke: $color-dark;
+    }
+}
